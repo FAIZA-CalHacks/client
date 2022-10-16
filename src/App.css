@@ -1,3 +1,50 @@
+.questionCard {
+  margin: 25px 300px 25px 300px;
+  padding: 25px 25px 25px 25px;
+}
+
+.enlargedCard {
+  margin: 50px 50px 50px 50px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 25px;
+  padding-left: 0px;
+}
+
+.post {
+  border-style: solid;
+  margin: 25px 300px 25px 300px;
+  /* padding: 25px 0px 0px 25px; */
+  position: relative;
+
+}
+.inside-image {
+  margin-top: 25px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 25px;
+
+  padding: 0px 0px 0px 0px;
+  background-color: aqua;
+  height: 100px;
+  width: auto;
+}
+.upvote {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 25px;
+  margin-left: 0px;
+
+  padding: 0px 0px 0px 0px;
+  background-color: red;
+  height: 100px;
+  width: auto;
+}
+
+.title {
+  font-size: large
+}
+
 .App {
   text-align: center;
 }
