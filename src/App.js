@@ -4,8 +4,8 @@ import Home from "./pages/home";
 import PostQuestion from "./pages/postQuestion";
 import Profile from "./pages/profile";
 import { Route, Routes } from "react-router-dom";
-import EnlargedPost from "./pages/enlargedPost";
-import Login from "./pages/login";
+import EnlargedPost from './pages/enlargedPost';
+import Login from './pages/login';
 import Landing from "./pages/landing";
 
 function App() {

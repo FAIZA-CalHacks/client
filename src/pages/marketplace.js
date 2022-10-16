@@ -2,33 +2,17 @@ import React, { useState, useEffect } from "react";
 import HomePost from "../components/homePost";
 import Axios from 'axios'
 
-
-export default function Home(){
+export default function Marketplace(){
 
     const renderPost = (post, index) => {
-        console.log(post._id);
-        return <HomePost image={post.preview.base64String} postID={post._id}/>
+        return <HomePost postTitle={post.title} postBody={post.value} postID={" "}/>
     }
 
     const [postData, setItem] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    // const fetchFunction = async () => {
-    //     try {
-    //         const data = await Axios
-    //             .get('https://faiza-api.herokuapp.com/api/posts')
-    //             .then(res => {
-    //                 console.log(res.data);
-    //                 setItem(res.data);
-    //                 // return(res.data);
-    //             });
-    //     } catch (e) {
-    //         console.log(e);
-    //     }
-    // };
-
     useEffect( () => {
-         Axios.get('https://faiza-api.herokuapp.com/api/posts/previews').then(res => {
+         Axios.get('https://faiza-api.herokuapp.com/api/posts').then(res => {
              setItem(res.data);
              setLoading(true);
          });
@@ -40,7 +24,7 @@ export default function Home(){
 
     return (
         <div>
-            {loading? postData.map(renderPost) : <h1> </h1>}
+            {loading? postData.map(renderPost) : <h1>Loading</h1>}
         </div>
     );
 
