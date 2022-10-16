@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
+import Nav from 'react-bootstrap/Nav';
+
 import '../App.css'
 
 export default function Login(){
@@ -21,7 +23,7 @@ export default function Login(){
     }
 
     const handleSubmit = e => {
-        e.preventDefault()
+        // e.preventDefault()
     }
     
     return (
@@ -63,9 +65,10 @@ export default function Login(){
                 {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group> */}
-                <Button variant="info" onClick={handleSubmit} type="submit">
+                <Nav.Link href="/home">
                     Submit
-                </Button>
+                </Nav.Link>
+                
             </Form>
         </Card>
     );
