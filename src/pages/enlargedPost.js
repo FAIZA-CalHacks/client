@@ -32,12 +32,15 @@ export default function EnlargedPost(){
             const title = post.title;
             const body = post.body;
             const id = post._id;
+            const tag = post.category;
             return (
             <div className="enlargedCardBody">
-                <p1>Owner: {owner}</p1>
-                <p>Author: {author}</p>
+                <p1>Owner: {owner} Author: {author}</p1>
+                <p1></p1>
+                <p>AI sentiment analysis: {tag}</p>
                 <h1>{title}</h1>
                 <h4>{body}</h4>
+                
             </div>
             );
             // return <HomePost postTitle={post.title} postBody={post.body} postID={post._id}/>
