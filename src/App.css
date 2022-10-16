@@ -22,6 +22,10 @@ body {
   height: 100vh;
 }
 
+.nav > li > a:hover {
+  background-color: rgb(124, 36, 36);
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;

@@ -30,11 +30,11 @@ export default function Header() {
                 Post Question
               </a>
             </li>
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <a class="nav-link" href="/view-profile">
                 View Profile
               </a>
-            </li>
+            </li> */}
             <li class="nav-item">
               <a class="nav-link" href="/login">
                 Log in

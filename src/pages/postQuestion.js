@@ -45,7 +45,7 @@ export default function PostQuestion() {
     };
 
     fetch(
-      "https://cors-anywhere.herokuapp.com/https://faiza-api.herokuapp.com/api/posts",
+      "https://cors-anywhere.herokuapp.com/{https://faiza-api.herokuapp.com/api/posts}",
       requestOptions
     )
       // fetch("/api/posts", requestOptions)
