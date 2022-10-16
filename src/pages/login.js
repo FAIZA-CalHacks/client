@@ -4,8 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import '../App.css'
 
-
-export default function PostQuestion(){
+export default function Login(){
     const [form, setForm] = useState({})
     const [errors, setErrors] = useState({})
     const setField = (field, value) => {
@@ -23,34 +22,6 @@ export default function PostQuestion(){
 
     const handleSubmit = e => {
         e.preventDefault()
-
-        console.log(form.question) //TODO: push to db
-        console.log(form.body)
-        // console.log(tags)
-
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        console.log(myHeaders);
-
-        var myForm = new FormData();
-        myForm.append("metadata.author", "634b98f82f538a7252854a0c");
-        myForm.append("metadata.owner", "634b98f82f538a7252854a0c");
-        myForm.append("title", form.question);
-        myForm.append("body", form.body);
-        
-
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: myForm,
-            redirect: 'follow'
-          };
-
-        fetch("https://cors-anywhere.herokuapp.com/https://faiza-api.herokuapp.com/api/posts", requestOptions)
-        // fetch("/api/posts", requestOptions)
-          .then(response => response.text())
-          .then(result => console.log(result))
-          .catch(error => console.log('error', error));
     }
     
     return (
@@ -58,24 +29,22 @@ export default function PostQuestion(){
         <Card border="secondary" className="questionCard">
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <h3>Question</h3>
+                    <h3>Enter your username to log in!</h3>
                     <Form.Control type="text"
-                        placeholder="Enter question"
-                        value = {form.question}
-                        onChange={(e)=>setField('question', e.target.value)}
-                        isInvalid={!!errors.question}
+                        placeholder="Enter email"
+                        value = {form.email}
+                        onChange={(e)=>setField('email', e.target.value)}
+                        isInvalid={!!errors.email}
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <h5>Body</h5>
-                    <Form.Control
-                        as="textarea"
-                        placeholder="Elaborate on your question"
-                        rows={6}
-                        value = {form.body}
-                        onChange={(e)=>setField('body', e.target.value)}
-                        isInvalid={!!errors.body}
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <h5>Enter your password</h5>
+                    <Form.Control type="password"
+                        placeholder="Enter password"
+                        value = {form.password}
+                        onChange={(e)=>setField('password', e.target.value)}
+                        isInvalid={!!errors.password}
                     />
                 </Form.Group>
 
@@ -101,4 +70,3 @@ export default function PostQuestion(){
         </Card>
     );
 }
-

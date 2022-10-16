@@ -5,6 +5,7 @@ import PostQuestion from './pages/postQuestion';
 import Profile from './pages/profile';
 import { Route, Routes } from "react-router-dom";
 import EnlargedPost from './pages/enlargedPost';
+import Login from './pages/login';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Navbar/>
       <div>
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
+          <Route path="/" element={<Login/>}></Route>
           <Route path="/home" element={<Home/>}></Route>
           <Route path="/post-question" element={<PostQuestion/>}></Route>
           <Route path="/view-profile" element={<Profile/>}></Route>
