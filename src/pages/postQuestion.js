@@ -32,10 +32,12 @@ export default function PostQuestion() {
     console.log(myHeaders);
 
     var myForm = new FormData();
-    myForm.append("metadata.author", "634b98f82f538a7252854a0c");
-    myForm.append("metadata.owner", "634b98f82f538a7252854a0c");
+    // myForm.append("metadata.author", "634bfd1e34d10076816b81f4");
+    // myForm.append("metadata.owner", "634bfd1e34d10076816b81f4");
     myForm.append("title", form.question);
     myForm.append("body", form.body);
+    myForm.append("preview.theme", "seti");
+
 
     var requestOptions = {
       method: "POST",
@@ -45,7 +47,7 @@ export default function PostQuestion() {
     };
 
     fetch(
-      "https://faiza-api.herokuapp.com/api/posts",
+      "https://cors-anywhere.herokuapp.com/{https://faiza-api.herokuapp.com/api/posts/634bfd1e34d10076816b81f4}",
       requestOptions
     )
       // fetch("/api/posts", requestOptions)

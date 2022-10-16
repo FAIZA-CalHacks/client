@@ -27,10 +27,14 @@ export default function Login() {
   };
 
   return (
-    <Card border="secondary" className="questionCard">
+    <Card
+      style={{ backgroundColor: "rgba(52, 52, 52, 0.2)" }}
+      border="secondary"
+      className="questionCard"
+    >
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <h3>Enter your username to log in!</h3>
+          <h3 style={{ color: "white" }}>Enter your username to log in!</h3>
           <Form.Control
             type="text"
             placeholder="Enter email"
@@ -41,7 +45,7 @@ export default function Login() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <h5>Enter your password</h5>
+          <h5 style={{ color: "white" }}>Enter your password</h5>
           <Form.Control
             type="password"
             placeholder="Enter password"
@@ -66,9 +70,15 @@ export default function Login() {
         {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group> */}
-        <Nav.Link variant="info" href="/home">
+        <Button
+          style={{ opacity: 1.0 }}
+          variant="info"
+          onClick={handleSubmit}
+          type="submit"
+          href="/home"
+        >
           Submit
-        </Nav.Link>
+        </Button>
       </Form>
     </Card>
   );
