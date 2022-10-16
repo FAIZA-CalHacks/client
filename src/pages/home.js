@@ -28,31 +28,37 @@ export default function Home(){
         return <HomePost postTitle={post.title} postBody={post.body} postID={post._id}/>
     }
 
-    const [postData, setItem] = useState(0);
+    const [postData, setItem] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    const fetchFunction = async () => {
-        try {
-            const data = await Axios
-                .get('https://faiza-api.herokuapp.com/api/posts')
-                .then(res => {
-                    console.log(res.data);
-                    setItem(res.data);
-                });
-        } catch (e) {
-            console.log(e);
-        }
-    };
+    // const fetchFunction = async () => {
+    //     try {
+    //         const data = await Axios
+    //             .get('https://faiza-api.herokuapp.com/api/posts')
+    //             .then(res => {
+    //                 console.log(res.data);
+    //                 setItem(res.data);
+    //                 // return(res.data);
+    //             });
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // };
 
-    useEffect(() => {
-        fetchFunction();
+    useEffect( () => {
+         Axios.get('https://faiza-api.herokuapp.com/api/posts').then(res => {
+             setItem(res.data);
+             setLoading(true);
+         });
     }, []);
+
+    console.log(postData);
+    console.log(loading);
     
 
     return (
         <div>
-            {/* Hello World */}
-            {postData.map(renderPost)}
-            {/* {(postData === null) ? "Hello World": postData.map(renderPost)} */}
+            {loading? postData.map(renderPost) : <h1>Loading</h1>}
         </div>
     );
 
