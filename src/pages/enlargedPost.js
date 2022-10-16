@@ -50,7 +50,7 @@ export default function EnlargedPost() {
   const renderValue = (post) => {
     // console.log(post);
     const value = post.value;
-    Axios.get("https://faiza-api.herokuapp.com/api/investments/post/" + postID);
+    Axios.get("http://localhost:8080/api/investments/post/" + postID);
     return (
       <h4 style={{ color: "white" }} className="enlargedCardValue">
         Value: {value}
@@ -98,27 +98,23 @@ export default function EnlargedPost() {
   // });
 
   useEffect(() => {
-    Axios.get("https://faiza-api.herokuapp.com/api/posts/" + postID).then(
-      (res) => {
-        setItem(res.data);
-        console.log(res.data);
-        setLoading(true);
-        Axios.get(
-          "https://faiza-api.herokuapp.com/api/investments/post/" + postID
-        ).then((res2) => {
+    Axios.get("http://localhost:8080/api/posts/" + postID).then((res) => {
+      setItem(res.data);
+      console.log(res.data);
+      setLoading(true);
+      Axios.get("http://localhost:8080/api/investments/post/" + postID).then(
+        (res2) => {
           setInvestments(res2.data);
           console.log(res2.data);
           setLoading(true);
-          Axios.get("https://faiza-api.herokuapp.com/api/users").then(
-            (res3) => {
-              setUsers(res3.data);
-              console.log(res3.data);
-              setLoading(true);
-            }
-          );
-        });
-      }
-    );
+          Axios.get("http://localhost:8080/api/users").then((res3) => {
+            setUsers(res3.data);
+            console.log(res3.data);
+            setLoading(true);
+          });
+        }
+      );
+    });
   }, []);
 
   return (

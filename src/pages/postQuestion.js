@@ -23,34 +23,18 @@ export default function PostQuestion() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(form.question); //TODO: push to db
-    console.log(form.body);
-    // console.log(tags)
-
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    console.log(myHeaders);
-
-    var myForm = new FormData();
-    myForm.append("metadata.author", "634b98f82f538a7252854a0c");
-    myForm.append("metadata.owner", "634b98f82f538a7252854a0c");
-    myForm.append("title", form.question);
-    myForm.append("body", form.body);
-
-    var requestOptions = {
+    let options = {
       method: "POST",
-      headers: myHeaders,
-      body: myForm,
-      redirect: "follow",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({ title: form.question, body: form.body }),
     };
 
-    fetch(
-      "https://cors-anywhere.herokuapp.com/{https://faiza-api.herokuapp.com/api/posts}",
-      requestOptions
-    )
-      // fetch("/api/posts", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
+    const userId = "634c07ac3f721d083bd6df71";
+
+    fetch("http://localhost:8080/api/posts/" + userId, options)
+      .then((res) => console.log(res))
       .catch((error) => console.log("error", error));
   };
 
