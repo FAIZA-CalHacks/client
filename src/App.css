@@ -1,3 +1,30 @@
+body {
+  background: linear-gradient(
+    -45deg,
+    #000000,
+    #4b095c,
+    #2c0536,
+    #040e69,
+    #0fdb7c,
+    #0fdb7c
+  );
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .questionCard {
   margin: 25px 300px 25px 300px;
   padding: 25px 25px 25px 25px;
@@ -16,7 +43,6 @@
   margin: 25px 300px 25px 300px;
   /* padding: 25px 0px 0px 25px; */
   position: relative;
-
 }
 .inside-image {
   margin-top: 25px;
@@ -42,7 +68,7 @@
 }
 
 .title {
-  font-size: large
+  font-size: large;
 }
 
 .App {
@@ -73,6 +99,30 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.bg-custom-1 {
+  background-color: #85144b;
+}
+
+.bg-custom-2 {
+  background-image: linear-gradient(15deg, #00103d 0%, #000000 100%);
+}
+
+.bg-custom-3 {
+  background-image: linear-gradient(15deg, #c5c5c5 0%, #aaaaaa 100%);
+}
+
+.me-auto {
+  color: white;
+}
+.tet {
+  color: white;
+}
+
+.navbar-nav {
+  color: white !important;
+  font-size: 25px;
 }
 
 @keyframes App-logo-spin {
