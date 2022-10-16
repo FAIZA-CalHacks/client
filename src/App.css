@@ -1,17 +1,15 @@
-.investor{
-  width: 10%
+.investor {
+  width: 10%;
 }
 
-.center{
-  width: auto;
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* align-items: center */
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body {
   background: linear-gradient(
-    -45deg,
+    -33deg,
     #000000,
     #4b095c,
     #2c0536,
@@ -20,7 +18,7 @@ body {
     #0fdb7c
   );
   background-size: 400% 400%;
-  animation: gradient 3s ease infinite;
+  animation: gradient 15s ease infinite;
   height: 100vh;
 }
 
@@ -54,7 +52,7 @@ body {
   margin-right: 25px;
   margin-bottom: 25px;
   margin-left: 25px;
-  
+
   padding-top: 0px;
   padding-right: 0px;
   padding-bottom: 0px;
@@ -66,7 +64,7 @@ body {
   margin-right: 0px;
   margin-bottom: 0px;
   margin-left: 10px;
-  
+
   padding-top: 0px;
   padding-right: 0px;
   padding-bottom: 0px;
@@ -78,7 +76,7 @@ body {
   margin-right: 10px;
   margin-bottom: 0px;
   margin-left: 500px;
-  
+
   padding-top: 0px;
   padding-right: 0px;
   padding-bottom: 0px;
