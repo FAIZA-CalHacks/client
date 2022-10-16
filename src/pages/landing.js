@@ -6,7 +6,7 @@ import Nav from "react-bootstrap/Nav";
 
 import "../App.css";
 
-export default function Login() {
+export default function Landing() {
   const [form, setForm] = useState({});
   const [errors, setErrors] = useState({});
   const setField = (field, value) => {
