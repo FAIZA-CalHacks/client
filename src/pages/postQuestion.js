@@ -41,9 +41,10 @@ export default function PostQuestion() {
 
     var requestOptions = {
       method: "POST",
-      headers: myHeaders,
-      body: myForm,
-      redirect: "follow",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({ title: form.question, body: form.body }),
     };
 
     fetch(
@@ -53,7 +54,11 @@ export default function PostQuestion() {
       // fetch("/api/posts", requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
+    const userId = "634c07ac3f721d083bd6df71";
+
+    // fetch("https://faiza-api.herokuapp.com/api/posts/" + userId, requestOptions)
+    //   .then((res) => console.log(res))
+    //   .catch((error) => console.log("error", error));
   };
 
   return (
